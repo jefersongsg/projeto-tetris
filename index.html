@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Tetris Online</title>
+    <title>Block Box</title>
     <style>
         body {
             background-color: #abd1c6;
-            color: #e8e4e6;
+            color:  #004643;
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 0;
@@ -16,7 +16,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            height: 90vh;
         }
         
         .game-container {
@@ -26,11 +26,12 @@
         }
         
         canvas {
-            border: 2px solid #f9bc60;
+            border: 5px solid #f9bc60;
             background-color: #004643;
         }
         
         .info-panel {
+            color: #abd1c6;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -38,7 +39,7 @@
             padding: 10px;
             background-color: #001e1d;
             border-radius: 5px;
-            border: 1px solid #f9bc60;
+            border: 5px solid #f9bc60;
         }
         
         h1 {
@@ -66,18 +67,35 @@
         
         #game-over {
             position: absolute;
-            font-size: 48px;
+            font-size: 70px;
             color: black;
             background-color: rgba(252, 5, 5, 0.8);
             padding: 20px;
             border-radius: 10px;
-            border: 2px solid black;
+            border: 5px solid black;
             display: none;
         }
-    </style>
+        
+        @media (max-width: 500px){   
+            body {
+                color:  #004643;
+                padding: 0;
+                height: 95vh;
+            }
+            .info-panel {
+                display: none;
+            }
+            h1 {
+                margin-bottom: 5px;
+            }
+            #game-over {
+                font-size: 40px;
+            }
+        }
+        </style>
 </head>
 <body>
-    <h1>TETRIS </h1>
+    <h1>Block Box </h1>
     
     <div class="game-container">
         <canvas id="tetris"></canvas>
@@ -97,7 +115,7 @@
                 <p>W : Rotacionar</p>
                 <p>S : Descer</p>
                 <p>Espaço : Queda rápida</p>
-                <p>Enter : Pausar/Play</p>
+                <p>Enter : Pausar/Retomar</p>
                 <p>R : Reiniciar</p>
             </div>
         </div>
