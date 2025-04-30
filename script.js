@@ -491,22 +491,4 @@ function init() {
 document.addEventListener('DOMContentLoaded', () => {
     init();
 });
-// Adicionando suporte a toques para dispositivos móveis
-    document.addEventListener('touchstart', event => {
-        if (gameOver) return; // Não permite toque se o jogo acabou
-    
-        const touch = event.touches[0];
-        const touchX = touch.clientX;
-        const touchY = touch.clientY;
-    
-        if (touchY > window.innerHeight * 0.7) {
-            playerDrop(); // Se tocar na parte inferior da tela, faz a peça cair
-        } else if (touchX < window.innerWidth * 0.3) {
-            playerMove(-1); // Se tocar no lado esquerdo, move para esquerda
-        } else if (touchX > window.innerWidth * 0.7) {
-            playerMove(1); // Se tocar no lado direito, move para direita
-        } else {
-            playerRotate(1); // Toque no meio da tela para girar a peça
-        }
-    });
-    
+
